@@ -7,7 +7,7 @@
 
 int i = 10 // Semi-colon missing (allowed in Groovy)
 
-// while never runs... because 10 is > than 5
+// will never run... because 10 is > than 5
 while (i < 5) {
 	i++;
 	println i // Missing semi-colon (allowed in Groovy)
