@@ -314,3 +314,88 @@ while (counter != -1) {
 }
 
 println "Was the sequence consecutive (increaseing or decreasing)? " + status;
+
+/**
+ * Exercise 11 - Poker hands (harder)
+ *
+ * Read five cards from the user.
+ * For each card, read the rank (1,2,3,4,5,6,7,8,9,10,J,Q,K)
+ * and the suit (”spades”, ”hearts”, ”diamonds”, ”clubs”).
+ * Each of the five cards must be valid before accepting the next one.
+ * Once the program has the five cards, it should tell the user what is the
+ * best hand she has got, as per the following list (from best to worst):
+ * 
+ * - Straigh flush:
+ *   all cards are of the same suite and their ranks are consecutive.
+ *   Note that they are probably not ordered as they were entered.
+ * 
+ * - Poker: four of the five cards have the same rank.
+ *
+ * - Full House: three of a kind plus two of a kind.
+ *
+ * - Flush: all cards share the same suit, but are not consecutive.
+ *
+ * - Straight: all cards are consecutive, but not of the same suit.
+ *
+ * - Three of a kind: three of the five cards have the same rank.
+ *
+ * - Two pairs: two pairs (see below).
+ *
+ * - Pair: two of the five cards have the same rank.
+ *
+ * - Nothing: any other situation.
+ *
+ * If you ever launch an online poker business, this could be one (very small)
+ * piece of it.
+ */
+
+// I'm using "i" to count the 5 times the user is reading a card
+int i;
+int j;
+
+String card;
+String rank;
+String suit;
+
+String[] ranks = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+String[] suits = ["spades", "hearts", "diamonds", "clubs"];
+
+// 5 cards only and they need to be valid
+for (i = 0; i < 5; i++) {
+
+	// Check rank
+	print ("Read a card value: ");
+	rank = System.console().readLine();
+
+	for (j = 0; j < 13; j++) {
+		if (rank == ranks[j]) {
+			// The card has a suitable rank
+			// How do I dynamically change the name of the var?
+			String rank[i] = rank;
+		}
+	}
+
+	// Check suit
+	print ("Read a card suit: ");
+	suit = System.console().readLine();
+
+	// If requirements satisfied
+	// Save card (name convention)
+	card = 
+
+	i++;
+}
+
+// Parse the five cards and check the order
+
+// Parse the five cards and check if the suit matches
+
+// Create an array of cards and for loop
+
+// String[] arrayOfRanks = [rank1, rank2, rank3, rank4, rank5];
+
+// String[] arrayOfSuits = [suit1, suit2, suit3, suit4, suit5];
+
+// I need to combine rank and suit
+
+// use i and j instead of other vars
