@@ -399,3 +399,62 @@ for (i = 0; i < 5; i++) {
 // I need to combine rank and suit
 
 // use i and j instead of other vars
+
+// TO FINISH
+
+/**
+ * Exercise 12 - Number piramids
+ *
+ * Write a program that output a number piramid like the one below.
+ *
+ * 1
+ * 22
+ * 333
+ * 4444
+ * 55555
+ * 666666
+ * 7777777
+ * \ldots
+ *
+ */
+
+int i;
+int j;
+
+for (i = 0; i < 8; i++) {
+	// print i;
+
+	for (j = 0; j < i; j++) {
+		print i;
+	}
+
+	println "";
+}
+
+/**
+ * Exercise 13 - All the primes up to 1,000 (*)
+ *
+ * Write a program that prints all on screen all prime numbers up to 1,000.
+ */
+
+
+print "Pick a prime number: ";
+String str = System.console().readLine();
+int yourNum = Integer.parseInt(str);
+
+if (yourNum % 2 == 0) {
+	println("This is not a prime number... it's an even number. Don't cheat!");
+} else {
+	i = 2; // I don't need to divide by 1 or zero, so I start at 2
+	while (i < yourNum) {
+		println ("Dividing " + yourNum + " by " + i);
+		if (yourNum % i != 0) {
+			i++;
+		} else {
+			println ("Not a prime number, sorry. Your number can be divided by " + i);
+			break;
+		}
+	}
+}
+
+println ("And we're done here.");

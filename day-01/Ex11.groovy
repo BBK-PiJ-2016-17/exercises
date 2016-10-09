@@ -124,6 +124,8 @@ for (i = 0; i < 5; i++) {
 }
 
 println card[0..4];
+
+
 // Parse the five cards and check the order
 
 // Parse the five cards and check if the suit matches
