@@ -468,4 +468,12 @@ for (num = 1; num <= 1000; num++) {
 	countEven = 0;
 }
 
-println ("\nAnd we're done here.\n");
+println ("\nAnd that's a list of all the prime numbers between 1 and a 1000.\n");
+
+/**
+ * Exercise 14 - Up to 1000 primes (*)
+ *
+ * Modify the program that you wrote for the former exercise
+ * so that it writes on screen the first 1,000 primes.
+ */
+
