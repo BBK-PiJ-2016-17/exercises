@@ -133,4 +133,32 @@ println ("\nAnd that's a list of the first 1000 prime numbers.\n");
  *   int numberToGuess = Math.abs(1000 * Math.random())
  */
 
- 
+int numberToGuess = Math.abs(1000 * Math.random());
+int counter;
+String guess;
+int guessNum;
+
+println "\n==== Let's play.\n==== Try to guess my number!\n";
+
+// Print the random number to check whether the matching works.
+// println numberToGuess + "\n\n";
+
+print "Tell me a number between 0 and 1000: ";
+guess = System.console().readLine();
+guessNum = Integer.parseInt(guess);
+
+while (guessNum != numberToGuess) {
+	counter++;
+	if (guessNum < numberToGuess) {
+		print "Nope. Too LOW. Try again: ";
+	} else {
+		print "Nope. Too HIGH. Try again: ";
+	}
+	guess = System.console().readLine();
+	guessNum = Integer.parseInt(guess);
+}
+
+if (guessNum == numberToGuess) {
+	println "\nWell done!";
+	println "It took you " + counter + " guesses."
+}
