@@ -437,24 +437,35 @@ for (i = 0; i < 8; i++) {
  * Write a program that prints all on screen all prime numbers up to 1,000.
  */
 
+int i;
+int num;
+int counter;
+int countEven;
 
-print "Pick a prime number: ";
-String str = System.console().readLine();
-int yourNum = Integer.parseInt(str);
+for (num = 1; num <= 1000; num++) {
+	for (i = 1; i <= num; i++) {
 
-if (yourNum % 2 == 0) {
-	println("This is not a prime number... it's an even number. Don't cheat!");
-} else {
-	i = 2; // I don't need to divide by 1 or zero, so I start at 2
-	while (i < yourNum) {
-		println ("Dividing " + yourNum + " by " + i);
-		if (yourNum % i != 0) {
-			i++;
+		if (num % i != 0) {
+			counter++;
 		} else {
-			println ("Not a prime number, sorry. Your number can be divided by " + i);
-			break;
+			if (num == 2) {
+				countEven++;	// Adding an extra count to fix the special case
+								// for number "2"
+			}
+			countEven++;
 		}
 	}
+
+	if (num == 1000) {
+		break;
+	}
+
+	if (countEven < 3) {
+		println num;
+	}
+
+	counter = 0;
+	countEven = 0;
 }
 
-println ("And we're done here.");
+println ("\nAnd we're done here.\n");

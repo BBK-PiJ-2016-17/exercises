@@ -6,22 +6,33 @@
 
 int i;
 int num;
+int counter;
+int countEven;
 
-for (i = 0; i <= 1000; i++) {
-	if (num % 2 == 0) {
-		println("This is not a prime number... it's an even number. Don't cheat!");
-	} else {
-		i = 2; // I don't need to divide by 1 or zero, so I start at 2
-		while (i < num) {
-			println ("Dividing " + num + " by " + i);
-			if (num % i != 0) {
-				i++;
-			} else {
-				println ("Not a prime number, sorry. Your number can be divided by " + i);
-				break;
+for (num = 1; num <= 1000; num++) {
+	for (i = 1; i <= num; i++) {
+
+		if (num % i != 0) {
+			counter++;
+		} else {
+			if (num == 2) {
+				countEven++;	// Adding an extra count to fix the special case
+								// for number "2"
 			}
+			countEven++;
 		}
 	}
+
+	if (num == 1000) {
+		break;
+	}
+
+	if (countEven < 3) {
+		println num;
+	}
+
+	counter = 0;
+	countEven = 0;
 }
 
-println ("And we're done here.");
+println ("\nAnd we're done here.\n");
