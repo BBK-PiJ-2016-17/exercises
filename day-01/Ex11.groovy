@@ -141,6 +141,9 @@ for (i = 0; i < 5; i++) {
 		// println "i = " + i;
 	} else {
 		println "\n==== Card " + (i+1) + " = " + card[i] + " ====\n";
+		println "\tRank:\t" + rank;
+		println "\tSuit:\t" + suit;
+		println "\n==============================\n"
 		duplicate = false;
 	}
 }
