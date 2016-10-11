@@ -12,13 +12,18 @@ int num;
 int counterPlus;
 int counterMinus;
 int optimusPrime;
+int primeCount;
+int counter;
+int countEven;
 
 print "Enter a number: ";
 
 num = System.console().readLine();
 
-// while (primeCount < 1000) {
-	for (i = 1; i <= num; i++) {
+primeCount = num;
+
+while (primeCount <= num && primeCount > 0) {
+	for (i = num; i > 0; i--) {
 
 		if (num % i != 0) {
 			counter++;
@@ -33,13 +38,13 @@ num = System.console().readLine();
 
 	if (countEven < 3) {
 		println primeCount+1 + ": \t" + num;
-		primeCount++;
+		break;
+	} else {
+		primeCount--;
 	}
 
 	counter = 0;
 	countEven = 0;
+}
 
-	num++;
-// }
-
-println ("\nAnd that's a list of the first 1000 prime numbers.\n");
+println (num + " <- this is the closest prime number going down");
