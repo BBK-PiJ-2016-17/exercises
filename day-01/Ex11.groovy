@@ -45,7 +45,7 @@ String suit;
 String[] ranks = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 String[] suits = ["spades", "hearts", "diamonds", "clubs"];
 
-println ranks[0..12];
+// println ranks[0..12];
 
 // 5 cards only and they need to be valid
 for (i = 0; i < 5; i++) {
@@ -92,7 +92,7 @@ for (i = 0; i < 5; i++) {
 		cardPick = Integer.parseInt(rank);
 	}
 
-	println "Card " + (i+1)  + ": " + rank;
+	println "Rank " + (i+1)  + ": " + rank;
 	card[i] = rank;
 
 	// Check suit
@@ -125,6 +125,7 @@ for (i = 0; i < 5; i++) {
 
 println card[0..4];
 
+// Check if the user input the card twice
 
 // Parse the five cards and check the order
 
