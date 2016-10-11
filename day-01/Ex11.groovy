@@ -32,20 +32,23 @@
  * piece of it.
  */
 
-// I'm using "i" to count the 5 times the user is reading a card
+// Using "i" to count the 5 times the user is reading a card
 int i;
 int j;
-int cardPick;
+int rankPick;
 int suitPick;
 
 boolean duplicate = false;
 
-String[] card = ["0", "0", "0", "0", "0"];
+String[] card = ["", "", "", "", ""];
 String rank;
 String suit;
 
 String[] ranks = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 String[] suits = ["spades", "hearts", "diamonds", "clubs"];
+
+int[] rankOrder = [0, 0, 0, 0, 0];
+int[] suitOrder = [0, 0, 0, 0, 0];
 
 // println ranks[0..12];
 
@@ -55,9 +58,9 @@ for (i = 0; i < 5; i++) {
 	// Check rank
 	print ("Read a card value (a number from 1 to 13): ");
 	rank = System.console().readLine();
-	cardPick = Integer.parseInt(rank);
+	rankPick = Integer.parseInt(rank);
 
-	switch(cardPick) {
+	switch(rankPick) {
 		case 1:	rank = "1";
 			break;
 		case 2: rank = "2";
@@ -88,10 +91,10 @@ for (i = 0; i < 5; i++) {
 			break;
 	}
 
-	while (rank == "Not a suitable card." || cardPick > 13) {
+	while (rank == "Not a suitable card." || rankPick > 13) {
 		print ("Read a card value (a number from 1 to 13): ");
 		rank = System.console().readLine();
-		cardPick = Integer.parseInt(rank);
+		rankPick = Integer.parseInt(rank);
 	}
 
 	// println "Rank " + (i+1)  + ": " + rank;
@@ -137,12 +140,17 @@ for (i = 0; i < 5; i++) {
 	}
 
 	if (duplicate == true) {
-		i--;
-		// println "i = " + i;
+		i--;	// Using this to make sure we have 5 cards in the end.
+				// println "i = " + i;
 	} else {
 		println "\n==== Card " + (i+1) + " = " + card[i] + " ====\n";
 		println "\tRank:\t" + rank;
 		println "\tSuit:\t" + suit;
+
+		println "\n\trankPick == " + rankPick;
+		rankOrder[i] = rankPick;
+		println "\tsuitPick == " + suitPick;
+		suitOrder[i] = suitPick;
 		println "\n==============================\n"
 		duplicate = false;
 	}
@@ -150,3 +158,9 @@ for (i = 0; i < 5; i++) {
 
 // Printing the 5 users' cards
 println card[0..4];
+
+// Print the 5 ranks
+println rankOrder[0..4];
+
+// Print the 5 suits
+println suitOrder[0..4];
