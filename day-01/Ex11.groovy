@@ -1,4 +1,3 @@
-
 /**
  * Exercise 11 - Poker hands (harder)
  *
@@ -35,8 +34,11 @@
 
 // I'm using "i" to count the 5 times the user is reading a card
 int i;
+int j;
 int cardPick;
 int suitPick;
+
+boolean duplicate = false;
 
 String[] card = ["0", "0", "0", "0", "0"];
 String rank;
@@ -92,7 +94,7 @@ for (i = 0; i < 5; i++) {
 		cardPick = Integer.parseInt(rank);
 	}
 
-	println "Rank " + (i+1)  + ": " + rank;
+	// println "Rank " + (i+1)  + ": " + rank;
 	card[i] = rank;
 
 	// Check suit
@@ -119,22 +121,29 @@ for (i = 0; i < 5; i++) {
 		suitPick = Integer.parseInt(suit);
 	}
 
-	println "Suit " + (i+1)  + ": " + suit;
+	// println "Suit " + (i+1)  + ": " + suit;
 	card[i] += " " + suit;
+
+	// Check that the card is not equal to any previous one
+	for (j = 0; j < 4; j++) {
+		if (card[i] == card[j] && i != 0 && i != j) {
+			println "There's a duplicate";
+			duplicate = true;
+			// println card[0..i];
+			break;
+		} else {
+			duplicate = false;
+		}
+	}
+
+	if (duplicate == true) {
+		i--;
+		// println "i = " + i;
+	} else {
+		println "\n==== Card " + (i+1) + " = " + card[i] + " ====\n";
+		duplicate = false;
+	}
 }
 
+// Printing the 5 users' cards
 println card[0..4];
-
-// Check if the user input the card twice
-
-// Parse the five cards and check the order
-
-// Parse the five cards and check if the suit matches
-
-// Create an array of cards and for loop
-
-// String[] arrayOfRanks = [rank1, rank2, rank3, rank4, rank5];
-
-// String[] arrayOfSuits = [suit1, suit2, suit3, suit4, suit5];
-
-// I need to combine rank and suit
