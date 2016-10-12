@@ -40,6 +40,8 @@ int suitPick;
 
 boolean duplicate = false;
 
+boolean sameSuit;
+
 String[] card = ["", "", "", "", ""];
 String rank;
 String suit;
@@ -164,3 +166,23 @@ println rankOrder[0..4];
 
 // Print the 5 suits
 println suitOrder[0..4];
+
+for (i = 0; i < 4; i++) {
+	j = 0;
+	if (suitOrder[j] == suitOrder[i]) {
+		sameSuit = true;
+		j++;
+	} else {
+		sameSuit = false;
+	}
+}
+
+println sameSuit;
+
+if (sameSuit) {
+	println "\nFlush."
+}
+
+if (suitOrder[0] == suitOrder[1] && suitOrder[1] == suitOrder[2] && suitOrder[2] == suitOrder[3] && suitOrder[3] == suitOrder[4]) {
+	println "\nWe have a flush."
+}
