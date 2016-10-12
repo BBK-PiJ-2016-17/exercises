@@ -41,6 +41,7 @@ int suitPick;
 boolean duplicate = false;
 
 boolean sameSuit;
+boolean consecutive;
 
 String[] card = ["", "", "", "", ""];
 String rank;
@@ -49,8 +50,8 @@ String suit;
 String[] ranks = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 String[] suits = ["spades", "hearts", "diamonds", "clubs"];
 
-int[] rankOrder = [0, 0, 0, 0, 0];
-int[] suitOrder = [0, 0, 0, 0, 0];
+Integer[] rankOrder = [0, 0, 0, 0, 0];
+Integer[] suitOrder = [0, 0, 0, 0, 0];
 
 // println ranks[0..12];
 
@@ -163,10 +164,31 @@ println card[0..4];
 
 // Print the 5 ranks
 println rankOrder[0..4];
+println rankOrder.sort();
+
+println rankOrder[0];
+println rankOrder[1];
+println rankOrder[2];
+println rankOrder[3];
+println rankOrder[4];
 
 // Print the 5 suits
 println suitOrder[0..4];
 
+// Check if cards are consecutive going up
+j = 3;
+for (i = 4; i > 0; i--) {
+	if (rankOrder[j] == rankOrder[i] - 1){
+		consecutive = true;
+		j--;
+	} else {
+		consecutive = false;
+	}
+}
+
+println consecutive;
+
+// Check if the cards are of the same suits
 for (i = 0; i < 4; i++) {
 	j = 0;
 	if (suitOrder[j] == suitOrder[i]) {
@@ -180,9 +202,13 @@ for (i = 0; i < 4; i++) {
 println sameSuit;
 
 if (sameSuit) {
-	println "\nFlush."
+	if (consecutive) {
+		println "\nStraight Flush!";
+	} else {
+		println "\nFlush!";
+	}
 }
 
-if (suitOrder[0] == suitOrder[1] && suitOrder[1] == suitOrder[2] && suitOrder[2] == suitOrder[3] && suitOrder[3] == suitOrder[4]) {
-	println "\nWe have a flush."
+if (consecutive && !sameSuit) {
+	println "\nStraight!";
 }
