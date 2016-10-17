@@ -33,6 +33,7 @@
  */
 
 // Using "i" to count the 5 times the user is reading a card
+int howMany;
 int i;
 int j;
 int rankPick;
@@ -166,11 +167,11 @@ println card[0..4];
 println rankOrder[0..4];
 println rankOrder.sort();
 
-println rankOrder[0];
-println rankOrder[1];
-println rankOrder[2];
-println rankOrder[3];
-println rankOrder[4];
+// println rankOrder[0];
+// println rankOrder[1];
+// println rankOrder[2];
+// println rankOrder[3];
+// println rankOrder[4];
 
 // Print the 5 suits
 println suitOrder[0..4];
@@ -212,3 +213,6 @@ if (sameSuit) {
 if (consecutive && !sameSuit) {
 	println "\nStraight!";
 }
+
+// Check for poker
+if
