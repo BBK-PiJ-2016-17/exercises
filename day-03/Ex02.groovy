@@ -9,7 +9,9 @@
  * integers, there is a Double.parseDouble() method to parse real numbers.
  */
 
-String operation;
+String operation = "";
+String phrase = "";
+double result;
 
 print ("Give me a number: ");
 String num1 = System.console().readLine();
@@ -20,31 +22,36 @@ String num2 = System.console().readLine();
 double secondElement = Double.parseDouble(num2);
 
 println ("\tAddition\t1\n\tSubtraction\t2\n\tMultiplication\t3\n\tDivision\t4\n")
-println ("Now choose an operation to perform from the above menu: ");
+print ("Now choose an operation to perform from the above menu: ");
 String choice = System.console().readLine();
+println ("");
 
 switch (choice) {
 	case "1":
 		operation = "Addition";
+		phrase = ("Lets add " + firstElement + " and " + secondElement);
+		result = firstElement + secondElement;
 		break;
 	case "2":
 		operation = "Subtraction";
+		phrase = ("Lets subtract " + firstElement + " and " + secondElement);
+		result = firstElement - secondElement;
 		break;
 	case "3":
 		operation = "Multiplication";
+		phrase = ("Lets multiplicate " + firstElement + " by " + secondElement);
+		result = firstElement * secondElement;
 		break;
 	case "4":
 		operation = "Division";
+		phrase = ("Lets divide " + firstElement + " by " + secondElement);
+		result = firstElement / secondElement;
 		break;
 	default:
 		println ("Please pick an item from the menu (1 to 4)");
 		break;
 }
 
-if (choice == "1") {
-	println ("======== ") + operation + (" ========");
-	println ("Lets add " + firstElement + " and " + secondElement);
-	double result = firstElement + secondElement;
-	println ("Result: " + result+ "\n");
-}
-
+println ("\n===== " + operation + " =====\n");
+println phrase;
+println ("Result: " + result + "\n");
