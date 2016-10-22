@@ -27,7 +27,7 @@ public class Equality {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
 		System.out.println(d1);
 		System.out.println(d2);	
 	}
