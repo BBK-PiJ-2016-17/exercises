@@ -1,3 +1,6 @@
+/**
+ * Ex 2a - Pointer, arrows...
+ */
 class Point {
 	int x;
 	int y;
