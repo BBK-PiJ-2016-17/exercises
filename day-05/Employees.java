@@ -9,20 +9,27 @@
  *
  */
 
-// import java.*;
-
 public class Employees {
 
 	private String name;
 	private int id;
 
-	public Employee(String, int) {
-		this.name = name;
-		this.id = id;
-	}
+	// public Employee(String, int) {
+	// 	this.name = name;
+	// 	this.id = id;
+	// }
 
-	String[] listOfEmployees = new Employee[];
-
-	Employee listOfEmployees[0] = "John Smith", "1999";
-
+	String[][] listOfEmployees = {
+									{"John Smith", "1999"},
+									{"Virginia Woolf", "1882"},
+									{"James Bond", "007"},
+									{"Doris Lessing", "1919"},
+									{"Sherlock Holmes", "221"},
+									{"Michael Jordan", "23"},
+									{"Mary Poppins", "17"},
+									{"Luis Sepulveda", "832"},
+									{"Tom Sawyer", "999"},
+									{"Jack The Ripper", "666"}
+								};
+								
 }
