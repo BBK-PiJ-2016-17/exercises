@@ -12,7 +12,7 @@ class Point {
 		n = n + 1;
 		point.x = point.x + 1;
 		point = null;
-		println("\tAt the end of the methog...");
+		println("\tAt the end of the method...");
 		println("\tThe integer is " + n);
 		println("\tThe point is " + point);
 	}
