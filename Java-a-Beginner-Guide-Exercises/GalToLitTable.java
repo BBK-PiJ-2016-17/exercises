@@ -4,7 +4,7 @@
  * Call this program "GalToLitTable.java".
 */
 
-class GalToLitTable {
+public class GalToLitTable {
     public static void main(String args[]) {
         
         double gallons, liters;
