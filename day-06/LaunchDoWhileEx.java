@@ -1,4 +1,4 @@
-public class Launcher {
+public class LaunchDoWhileEx {
 
     public static void main(String[] args) {
 

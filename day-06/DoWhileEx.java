@@ -20,6 +20,7 @@ public class DoWhileEx {
 
     private int counter = 0;
 
+    // This constructor is pretty useless like this
     public DoWhileEx() {
         this.countDist = countDist;
         this.countPass = countPass;
