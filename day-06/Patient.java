@@ -12,12 +12,25 @@ public class Patient {
         this.nextPatient = null; // Pointer to another patient!
     }
 
-    // other methods come here, including getters / setters
-    public getNextPatient() {
-
+    public String getName() {
+        return this.name;
     }
 
-    public setNextPatient() {
-        
+    public int getAge() {
+        return this.age;
+    }
+
+    public String getIllness() {
+        return this.illness;
+    }
+
+    // other methods come here, including getters / setters
+    public Patient getNextPatient() {
+        return this.nextPatient;
+    }
+
+    public void setNextPatient(Patient patient) {
+        // Don't I just return a new Patient with the constructor?
+        nextPatient = patient;
     }
 }

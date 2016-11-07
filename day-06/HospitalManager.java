@@ -1,6 +1,5 @@
 public class HospitalManager {
     private Patient firstPatient = null;
-    // other methods come here...
 
     // this is a member method of class HospitalManager
     public void addPatient(Patient newPatient) {
@@ -47,6 +46,29 @@ public class HospitalManager {
         }
 
         return false;
+    }
+
+    public void printPatientList() {
+        Patient current = this.firstPatient;
+
+        do {
+            // this means we are not yet at the end of the list
+            System.out.println("\nName: " + current.getName() + "\nAge: " + current.getAge() + "\nIllness: " + current.getIllness());
+            current = current.getNextPatient();
+        } while (current != null);
+        System.out.println("=======\n");
+    }
+
+    public int getPatientCount() {
+        int count = 0;
+        Patient current = this.firstPatient;
+
+        do {
+            count++;
+            current = current.getNextPatient();
+        } while (current != null);
+        
+        return count;
     }
 
 }
