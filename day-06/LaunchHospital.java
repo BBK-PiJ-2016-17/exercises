@@ -1,5 +1,10 @@
 public class LaunchHospital {
     public static void main(String[] args) {
+        LaunchHospital launcher = new LaunchHospital();
+        launcher.launch();
+    }
+
+    public void launch() {
         String name, illness;
         int age;
 
