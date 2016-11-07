@@ -24,17 +24,18 @@ public class LaunchHospital {
         hm.addPatient(patientEight);
 
         System.out.println("Patient Count: " + hm.getPatientCount());
-        hm.printPatientList();
+        hm.printPatientList(false);
 
         hm.deletePatient("Florence");
         hm.deletePatient("Robert");
 
         System.out.println("Patient Count: " + hm.getPatientCount());
-        hm.printPatientList();
+        hm.printPatientList(true);
 
-        hm.deletePatient("John");
+        System.out.println("Delete John: "+ hm.deletePatient("John"));
+        System.out.println("Delete Peter: "+ hm.deletePatient("Peter"));
 
         System.out.println("Patient Count: " + hm.getPatientCount());
-        hm.printPatientList();
+        hm.printPatientList(false);
     }
 }
