@@ -8,22 +8,35 @@
 public class InchesToMetersTable {
     public static void main(String args[]) {
         
-        double inches, meters;
-        int counter;
-        counter = 0;
+        double inches = 1, meters = 0;
+        int counter = 0;
+        String word;
 
-        for(inches = 1; inches <= 12; inches++) {
+        System.out.println("\n===========================\n");
 
-            meters = inches * 39.37; // convert to meters
-            System.out.println(inches + " inches is " +
+        while (meters < 1) {
+
+            meters = (1 / 39.37) * inches; // convert to meters
+
+            if (inches == 1) {
+                word = "inch";
+            } else {
+                word = "inches";
+            }
+
+            System.out.println(inches + " " + word + " is " +
             meters + " meters.");
             counter++;
 
-            // every 10th line, print a blank line
+            // every 12 inches, print a blank line
             if(counter == 12) {
                 System.out.println();
                 counter = 0; // reset the line counter
             }
+
+            inches++;
         }
+
+        System.out.println("\n===========================\n");
     }
 }
