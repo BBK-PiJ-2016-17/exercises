@@ -32,6 +32,6 @@ public class AdultPerson implements Person {
             situation++;
         }
     }
-    
+
     // ...other methods, including constructors, come here...
 }
