@@ -15,8 +15,8 @@
 public class HashUtilities {
 
     public static int shortHash(int yourNum) {
-        int hash = Math.abs(yourNum) % 1000;
-        return hash;
+        int hashAssigned = Math.abs(yourNum) % 1000;
+        return hashAssigned;
     }
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class HashUtilities {
 
         // I only want Integer as input, right?
         int hash = Integer.parseInt(str);
-        
+
         int smallHash = HashUtilities.shortHash(hash);
         System.out.println("0 < " + smallHash + " < 1000");
 
