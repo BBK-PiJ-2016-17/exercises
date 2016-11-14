@@ -33,5 +33,10 @@ public class AdultPerson implements Person {
         }
     }
 
-    // ...other methods, including constructors, come here...
+    // Constructors
+
+    public AdultPerson() {
+        this.leftLeg = leftLeg;
+        this.rightLeg = rightLeg;
+    }
 }
