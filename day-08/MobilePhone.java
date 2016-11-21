@@ -10,8 +10,13 @@ public class MobilePhone extends OldPhone {
         return ringtone;
     }
 
-    public String playGame(String game) {
-        game = "Snake";
+    private String game = null;
+
+    // If I change the visibility from public to private (ex 4.1)
+    // I can't access it from SmartPhone, but if I change it to protected,
+    // I allow for package access.
+    protected String playGame(String game) {
+        this.game = game;
         return game;
     }
 
