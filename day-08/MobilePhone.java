@@ -1,5 +1,10 @@
 public class MobilePhone extends OldPhone {
 
+    public MobilePhone(String brand) {
+        // Gets brand
+        super(brand);
+    }
+
     public String ringAlarm(String ringtone) {
         ringtone = "We are the champions";
         return ringtone;
@@ -14,9 +19,9 @@ public class MobilePhone extends OldPhone {
 
     private String[] myPhoneArray;
 
-    public MobilePhone() {
-        myPhoneArray = new String[10];
-    }
+    // public MobilePhone() {
+    //     myPhoneArray = new String[10];
+    // }
 
     public void call(String number) {
         super.call(number);
