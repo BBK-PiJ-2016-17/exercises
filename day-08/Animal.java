@@ -32,6 +32,8 @@
  * descendant classes.
  */
 
+// Should this be an abstract?
+
 public interface Animal {
     void call();
     void reproduce();
