@@ -10,6 +10,7 @@
  */
 
 public class PhoneTest {
+
     public static void main(String[] args) {
         PhoneTest launcher = new PhoneTest();
         launcher.launch();
@@ -21,19 +22,36 @@ public class PhoneTest {
 
         // Testing all SmartPhone methods
         
+        System.out.println();
+
         // brand
+        System.out.println("== Testing getBrand()");
         System.out.println("This phone's brand: " + myPhone.getBrand());
+        System.out.println();
 
         // call
+        System.out.println("== Testing call()");
         myPhone.call("0039 123456");
+        System.out.println();
+
+        // ringAlarm
+        System.out.println("== Testing ringAlarm()");
+        myPhone.ringAlarm("Wishlist by Pearl Jam");
+        System.out.println();
 
         // playGame
-        myPhone.playGame("This game");
+        System.out.println("== Testing playGame()");
+        System.out.println("Im' playing: " + myPhone.playGame("This game"));
+        System.out.println();
 
         // browseWeb
+        System.out.println("== Testing browseWeb()");
         myPhone.browseWeb("News site");
+        System.out.println();
 
         // findPosition
+        System.out.println("== Testing findPosition()");
         myPhone.findPosition("29.979504, 31.1320133,17");
+        System.out.println();
     }
 }

@@ -5,9 +5,12 @@ public class MobilePhone extends OldPhone {
         super(brand);
     }
 
-    public String ringAlarm(String ringtone) {
-        ringtone = "We are the champions";
-        return ringtone;
+    private String ringtone = null;
+
+    public void ringAlarm(String ringtone) {
+        // ringtone = "We are the champions";
+        this.ringtone = ringtone;
+        System.out.println("Ringtone set: " + ringtone);
     }
 
     private String game = null;
@@ -28,23 +31,24 @@ public class MobilePhone extends OldPhone {
     //     myPhoneArray = new String[10];
     // }
 
-    public void call(String number) {
-        super.call(number);
+    // THIS NEEDS FIXING
+    // public void call(String number) {
+    //     super.call(number);
 
-        // myPhoneArray[0] = number;
-        int i = 0;
+    //     // myPhoneArray[0] = number;
+    //     int i = 0;
 
-        for (i = 0; i < 10; i++) {
-            myPhoneArray[i] = number;
-            i++;
-        }
+    //     for (i = 0; i < 10; i++) {
+    //         myPhoneArray[i] = number;
+    //         i++;
+    //     }
 
-        // Maybe do a LinkedList?
+    //     // Maybe do a LinkedList?
         
 
-        // increment and keep count of the 10 last numbers only;
-        // if (number.length < 10)
-    }
+    //     // increment and keep count of the 10 last numbers only;
+    //     // if (number.length < 10)
+    // }
 
     public void printLastNumbers(String lastCallers) {
 

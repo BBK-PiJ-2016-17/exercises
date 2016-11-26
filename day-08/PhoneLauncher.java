@@ -28,6 +28,11 @@ public class PhoneLauncher {
         System.out.println("This is MobPhone's brand: " + myMobPhone.getBrand());
         System.out.println("This is SmartPhone's brand: " + mySmartPhone.getBrand());
 
+        // Test ringtone
+
+        myMobPhone.ringAlarm("Wishlist");
+        mySmartPhone.ringAlarm("Carry on");
+
         // Test game
 
         System.out.println("This game on MobPhone: " + myMobPhone.playGame(mobGame));
