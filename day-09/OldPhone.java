@@ -1,0 +1,23 @@
+/**
+ * Exercise 1 - Day 08
+ * Create a class OldPhone that implements the following interface.
+ */
+
+public class OldPhone implements Phone {
+
+    private String brand = null;
+
+    public OldPhone(String brand) {
+        this.brand = brand;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    // ... there is no setter for brand
+
+    public void call(String number) {
+        System.out.println("Calling " + number + "...");
+    }
+}
