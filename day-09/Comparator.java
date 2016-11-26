@@ -1,5 +1,5 @@
 /**
- * Ex - 1 / Day 09 - Don’t Repeat Yourself
+ * Ex 1 - Day 09 / Don’t Repeat Yourself
  * Look at the following code. Is there anything you can do to make this code
  * better? Hint: you may need to convert between types (e.g. casting).
  *
