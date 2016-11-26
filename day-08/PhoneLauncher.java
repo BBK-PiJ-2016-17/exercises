@@ -32,5 +32,12 @@ public class PhoneLauncher {
 
         System.out.println("This game on MobPhone: " + myMobPhone.playGame(mobGame));
         System.out.println("This game on SmartPhone: " + mySmartPhone.playGame(smartGame));
+
+        // Test browsing the internet
+        mySmartPhone.browseWeb("News site");
+
+        // Testing findPosition method
+        mySmartPhone.findPosition("29.979504, 31.1320133,17");
+
     }
 }
