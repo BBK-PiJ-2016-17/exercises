@@ -11,7 +11,15 @@
  * class MobilePhone doesn't have them. 
  * What are the possible solutions?
  * A - Downcast myPhone which now is a MobilePhone to a SmartPhone to get access
- * to its methods.
+ * to its methods (I think this solves Ex 2.3 and 2.4 as well).
+ *
+ * 2.3 Indirect upcasting when calling a method
+ * Pass this object to a method testPhone(Phone) that has only one parameter of
+ * type Phone. What methods can you call on the object inside the method?
+ *
+ * 2.4 Downcasting
+ * Inside the former method, downcast the object to Smartphone so that you can
+ * use all the public methods of Smartphone.
  */
 
 public class PhoneTest2 {
@@ -20,6 +28,8 @@ public class PhoneTest2 {
         PhoneTest launcher = new PhoneTest();
         launcher.launch();
     }
+
+    // What's the method testPhone(Phone) supposed to do? (Ex 2.3 & 2.5)
 
     public void launch() {
 
