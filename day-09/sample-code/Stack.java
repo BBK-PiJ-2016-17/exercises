@@ -1,6 +1,6 @@
-public interface Stack<T extends Number> {
+public interface Stack<T> {
 
-   void push(T n);
+   void push(T object);
 
    T pop();
 

@@ -23,6 +23,8 @@ public class CompanyManager {
 
     // Print the list
     public void printList() {
+
+        // TODO: loop through the list
         System.out.println(firstEmployee + " " + lastEmployee);
     }
 }

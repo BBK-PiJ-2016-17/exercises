@@ -1,4 +1,4 @@
-public class StackImpl<T extends Number> implements Stack<T> {
+public class StackImpl<T> implements Stack<T> {
 
    private StackNode<T> head = null;
 
@@ -26,5 +26,8 @@ public class StackImpl<T extends Number> implements Stack<T> {
           return true;
       }
       return false;
+
+      // OR written this way
+      // return (head == null);
    }
 }
