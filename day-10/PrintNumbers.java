@@ -1,7 +1,8 @@
 /**
  * Ex 1 - Day 10 Recursive code, line by line
  *
- * a) What number would the following method print on screen if you called printNumbers(6)?
+ * a) What number would the following method print on screen if you called
+ * printNumbers(6)?
  * 
  *  void printNumbers(int n) {
  *      if (n <= 0) {
@@ -16,7 +17,8 @@
  *
  * 6, 4, 2, 2 
  *
- * Do this exercise on paper. Then add this method to a Java Decaf program and check your answer.
+ * Do this exercise on paper. Then add this method to a Java Decaf program and
+ * check your answer.
  */
 
 // Creating a class to test it
