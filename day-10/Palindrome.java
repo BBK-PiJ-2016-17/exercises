@@ -28,5 +28,6 @@ public class Palindrome {
         System.out.println("Is \"cacca\" a palindrome? " + isPalindrome("cacca"));
         System.out.println("Is \"ada\" a palindrome? " + isPalindrome("ada"));
         System.out.println("Is \"tattarrattat\" a palindrome? " + isPalindrome("tattarrattat"));
+        System.out.println("Is \"noel sees leon\" a palindrome? " + isPalindrome("noel sees leon"));
     }
 }
