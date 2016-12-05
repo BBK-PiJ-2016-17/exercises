@@ -45,9 +45,18 @@ public class FibonacciMemoization {
     public void launch() {
         fibMap.put(0L, 1L);
         fibMap.put(1L, 1L);
+
+        System.out.println();
+
         long preTime = System.currentTimeMillis();
-        System.out.println("Value of 45th number in Fibonacci series -> " + fibonacci(45));
+        System.out.println("Value of 40th number in Fibonacci series -> " + fibonacci(40));
         long postTime = System.currentTimeMillis();
+        System.out.println("Time taken to compute in milliseconds -> " + (postTime - preTime) + "\n");
+
+
+        preTime = System.currentTimeMillis();
+        System.out.println("Value of 45th number in Fibonacci series -> " + fibonacci(45));
+        postTime = System.currentTimeMillis();
         System.out.println("Time taken to compute in milliseconds -> " + (postTime - preTime));
     }
 }
