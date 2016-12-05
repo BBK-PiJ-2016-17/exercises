@@ -35,7 +35,13 @@ public class FibonacciRecursive {
     }
 
     public void launch() {
+        long preTime = System.currentTimeMillis();
         System.out.println("The 40th Fibonacci number is: " + fibonacciRecursive(40));
+        long postTime = System.currentTimeMillis();
+        System.out.println("Time taken to compute the 40th in milliseconds -> " + (postTime - preTime) + "\n");
+        preTime = System.currentTimeMillis();
         System.out.println("The 45th Fibonacci number is: " + fibonacciRecursive(45));
+        postTime = System.currentTimeMillis();
+        System.out.println("Time taken to compute the 45th in milliseconds -> " + (postTime - preTime));
     }
 }
