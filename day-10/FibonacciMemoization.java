@@ -14,35 +14,40 @@
  * preceding two.
  */
 
-// without memoization
-public class FibonacciRecursive {
+// with memoization
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-    private int n;
+public class FibonacciMemoization {
 
-    public int fibonacciRecursive(int n) {
-        
-        if (n == 1 || n == 2) {
+    public static Map<Long, Long> fibMap = new ConcurrentHashMap<>();
+
+    public static long fibonacci(long n) {
+        long fibValue = 0;
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
             return 1;
+        } else if (fibMap.containsKey(n)) {
+            return fibMap.get(n);
         } else {
-            int result = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
-            return result;
+            fibValue = fibonacci(n - 1) + fibonacci(n - 2);
+            fibMap.put(n, fibValue);
+            return fibValue;
         }
     }
 
     public static void main(String[] args) {
-        FibonacciRecursive test = new FibonacciRecursive();
+        FibonacciMemoization test = new FibonacciMemoization();
         test.launch();
     }
 
     public void launch() {
+        fibMap.put(0L, 1L);
+        fibMap.put(1L, 1L);
         long preTime = System.currentTimeMillis();
-        System.out.println("The 40th Fibonacci number is: " + fibonacciRecursive(40));
+        System.out.println("Value of 45th number in Fibonacci series -> " + fibonacci(45));
         long postTime = System.currentTimeMillis();
-        System.out.println("Time taken to compute the 40th in milliseconds -> " + (postTime - preTime) + "\n");
-
-        preTime = System.currentTimeMillis();
-        System.out.println("The 45th Fibonacci number is: " + fibonacciRecursive(45));
-        postTime = System.currentTimeMillis();
-        System.out.println("Time taken to compute the 45th in milliseconds -> " + (postTime - preTime));
+        System.out.println("Time taken to compute in milliseconds -> " + (postTime - preTime));
     }
 }
