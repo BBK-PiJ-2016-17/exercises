@@ -1,5 +1,5 @@
 /**
- * 2 Classics
+ * Ex 2 - Day 10 Classics
  *
  * 2.1 a) Factorial
  * Write a small program with a method that calculates the factorial of an integer number as seen in the notes.
@@ -8,8 +8,10 @@
  */
 
 public class FactorialRecursive {
+
     private int n;
     private int result;
+    
     public int factorialRecursive(int n) {
         if (n == 1) {
             return 1;
