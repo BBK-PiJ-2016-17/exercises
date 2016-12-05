@@ -22,6 +22,14 @@ public class PowerIterative {
         }
             
         return result;
+
+        // OR
+        // 
+        // int result = base;
+        // while (exponent > 1) {
+        //     result = result * base;
+        //     exponent--;
+        // }
     }
 
     public static void main(String[] args) {
