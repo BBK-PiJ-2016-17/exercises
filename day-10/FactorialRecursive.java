@@ -2,8 +2,10 @@
  * Ex 2 - Day 10 Classics
  *
  * 2.1 a) Factorial
- * Write a small program with a method that calculates the factorial of an integer number as seen in the notes.
- * Is it easy to do this both iteratively and recursively? Try both ways and see which is more natural for you. If
+ * Write a small program with a method that calculates the factorial of an
+ * integer number as seen in the notes.
+ * Is it easy to do this both iteratively and recursively? Try both ways and
+ * see which is more natural for you. If
  * one takes too long, try the other way.
  */
 
