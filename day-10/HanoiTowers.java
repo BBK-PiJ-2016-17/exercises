@@ -20,5 +20,45 @@
  */
 
 public class HanoiTowers {
+    // I know I need twice the number of moves of the precedent + 1
+    // Eg. I need   1 move to move 1 disc (n)
+    //              3 moves to move 2 discs (2n + 1 of the previous move)
+    //              7 moves to move 3 discs (2n + 1 of the previous move)
+    //              15 moves to move 4... etc.
 
+    private long count = 1;
+    private long disc;
+    private long moves = 3;
+
+    public long movingDiscs(long disc) {
+        if (disc == 1) {
+            moves = 1;
+            System.out.println("Moving " + disc + " disc - " + moves + " move");
+        } else if (disc > 2) {
+            // Calculate the number of moves needed
+
+            moves = 2 * moves + 1;
+            System.out.println(moves + " moves, disc = " + disc);
+            movingDiscs(disc - 1);
+        }
+
+        return moves;
+    }
+
+    public static void main(String[] args) {
+        HanoiTowers test = new HanoiTowers();
+        test.launch();
+    }
+
+    public void launch() {
+        movingDiscs(1);
+        System.out.println("-------");
+        movingDiscs(2);
+        System.out.println("-------");
+        movingDiscs(3);
+        System.out.println("-------");
+        movingDiscs(4);
+        System.out.println("-------");
+        movingDiscs(64);
+    }
 }
