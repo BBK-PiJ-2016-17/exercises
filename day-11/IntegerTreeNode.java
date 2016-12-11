@@ -48,18 +48,18 @@ public class IntegerTreeNode {
     }
 
     // ... methods would be here
-    public void add(int newNumber) {
-        if (newNumber > this.value) {
+    public void add(int newNode) {
+        if (newNode > this.value) {
             if (right == null) {
-                right = new IntegerTreeNode(newNumber);
+                right = new IntegerTreeNode(newNode);
             } else {
-                right.add(newNumber);
+                right.add(newNode);
             }
         } else {
             if (left == null) {
-                left = new IntegerTreeNode(newNumber);
+                left = new IntegerTreeNode(newNode);
             } else {
-                left.add(newNumber);
+                left.add(newNode);
             }
         }
     }
@@ -82,6 +82,7 @@ public class IntegerTreeNode {
         }
     }
 
+    // 1.1 Adding methods getMax() and getMin()
     public int getMax() {
         if (right == null) {
             return this.value;
@@ -96,6 +97,38 @@ public class IntegerTreeNode {
         } else {
             return left.getMin();
         }
+    }
+
+    // 1.2 Adding method toString()
+    // How do I move to the next if it's not null?
+    // A - I re-assign the node I just visited as it was the new root
+    @Override
+    public String toString() {
+        System.out.print("[" + value);
+        while (left != null) {
+            System.out.print(" L[" + left.value);
+            if (left.right != null) {
+                System.out.print(" R[" + left.right.value);
+                // left.right = left.right;
+            }
+            left = left.left;
+            System.out.print("]");
+        }
+
+        while (right != null) {
+            System.out.print(" R[" + right.value);
+            if (right.left != null) {
+                System.out.print(" R[" + right.left.value);
+                // right.left = right.left;
+            }
+            right = right.right;
+            System.out.print("]");
+        }
+
+        System.out.println("]");
+
+        String tree = null;
+        return tree;
     }
 
     // 1.3 Adding method depth()
@@ -120,7 +153,7 @@ public class IntegerTreeNode {
     }
 
     public static void main(String[] args) {
-        IntegerTreeNode root = new IntegerTreeNode(9);
+        IntegerTreeNode root = new IntegerTreeNode(9); // 9 will be the root
         root.launch();
     }
 
@@ -136,11 +169,21 @@ public class IntegerTreeNode {
         add(1000);
         add(24);
 
+        System.out.println();
+
         System.out.println("The smallest element of the tree is: " + getMin());
         System.out.println("The biggest element of the tree is: " + getMax());
 
+        System.out.println();
+
         System.out.println("Does the tree contain no. 27? " + contains(27));
         System.out.println("Does the tree contain no. 13? " + contains(13));
+
+        System.out.println();
+
+        toString();
+
+        System.out.println();
 
         System.out.println("Depth of the tree: " + depth());
 
