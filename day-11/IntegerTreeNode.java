@@ -10,6 +10,29 @@
  * minimum values stored in the tree.
  * Compile the class and use it inside a script adding numbers in different
  * orderings.
+ *
+ * 1.2 Tree traversal
+ *
+ * Add a method toString() to the class. This methods must return a
+ * representation of your tree in String form, where every node is represented
+ * as a list in square brackets containing its value, the left branch, and the
+ * right branch; the left branch should be prefixed by “L” and the right branch
+ * by R, and an empty branch should be shown as an empty pair of square
+ * brackets. Some examples of outputs in Figure 1.
+ * After you have commited this version of toString(), make another version that
+ * returns a simplified representation, where every node is represented as a
+ * list in square brackets containing its value and its branches, but only if
+ * they are not empty; without using the “L” and “R” prefixes. Some examples of
+ * outputs in Figure 1.
+ * Check that both versions of the method work by adding several elements and
+ * printing the String representation of the tree.
+ *
+ * 1.3 Depth
+ *
+ * Add a method depth() that returns the number of levels in a tree. By
+ * convention, a tree with only one node (i.e. the root) has a depth of zero.
+ * Hint: the depths of the trees in Figure 1 are 0, 1, 2, and 3.
+ * Hint: the depth of a tree is one more than the deepest of its subtreees.
  */
 
 public class IntegerTreeNode {
@@ -75,16 +98,17 @@ public class IntegerTreeNode {
         }
     }
 
+    // 1.3 Adding method depth()
     // depth
-    public int getDepth() {
+    public int depth() {
         int leftDepth = 0;
         if (left != null) {
-            leftDepth = left.getDepth();
+            leftDepth = left.depth();
             // could add 1 here and remove it from the return
         }
         int rightDepth = 0;
         if (right != null) {
-            rightDepth = right.getDepth();
+            rightDepth = right.depth();
             // could add 1 here and remove it from the return
         }
 
@@ -118,9 +142,7 @@ public class IntegerTreeNode {
         System.out.println("Does the tree contain no. 27? " + contains(27));
         System.out.println("Does the tree contain no. 13? " + contains(13));
 
-        getDepth();
-
-        System.out.println("Depth of the tree: " + getDepth());
+        System.out.println("Depth of the tree: " + depth());
 
     }
 }
