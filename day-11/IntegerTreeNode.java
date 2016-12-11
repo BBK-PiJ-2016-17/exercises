@@ -105,14 +105,25 @@ public class IntegerTreeNode {
     @Override
     public String toString() {
         System.out.print("[" + value);
+
         while (left != null) {
             System.out.print(" L[" + left.value);
             if (left.right != null) {
                 System.out.print(" R[" + left.right.value);
                 // left.right = left.right;
+            } else {
+                System.out.print(" R[]");
             }
             left = left.left;
-            System.out.print("]");
+            if (left == null) {
+                System.out.print(" L[]");
+            }
+        }
+
+        System.out.print("] [");
+
+        if (right == null) {
+            System.out.print("R[]");
         }
 
         while (right != null) {
