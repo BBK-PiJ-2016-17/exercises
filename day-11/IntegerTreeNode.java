@@ -38,7 +38,7 @@
  *
  * Add a method remove(int) to the class. This method must look for the node
  * that contains the given value and remove it from the tree.
- * Hint: removing leafs is trivial; to remove nodes, you can replace the removed
+ * Hint: removing leaves is trivial; to remove nodes, you can replace the removed
  * node with its highest element on its left or the lowest on its right.
  */
 
@@ -55,6 +55,11 @@ public class IntegerTreeNode {
     }
 
     public void add(int newNode) {
+        if (newNode == this.value) { // Using == because they're int type
+            System.out.println(value + " is a duplicate!");
+            return; // Return now, since we don't want duplicates in the tree
+        }
+
         if (newNode > this.value) {
             if (right == null) {
                 right = new IntegerTreeNode(newNode);
@@ -134,32 +139,43 @@ public class IntegerTreeNode {
         int leftDepth = 0;
         if (left != null) {
             leftDepth = left.depth();
-            // could add 1 here and remove it from the return
         }
+
         int rightDepth = 0;
         if (right != null) {
             rightDepth = right.depth();
-            // could add 1 here and remove it from the return
         }
 
         if (leftDepth > rightDepth) {
+            // Adding 1 to count for the root level
             return 1 + leftDepth;
         } else {
+            // Adding 1 to count for the root level
             return 1 + rightDepth;
         }
     }
 
     // 1.4 Adding method remove()
-    public void remove(int value) {
-        if (contains(value)) {
-            System.out.println("The element " + value + " is in the tree");
-            // If it's a leaf
-            if (left == null && right == null) {
-
+    public void remove(int nodeValue) {
+        if (contains(nodeValue)) {
+            System.out.println("The element " + nodeValue + " is in the tree");
+            // check if it's a leaf
+            if (isLeaf(left.left.left)) {
+                System.out.println("hey!");
             }
         } else {
-            System.out.println("There's no such element in the tree.");
+            System.out.println("The element " + nodeValue + " is NOT in the tree.");
         }
+    }
+
+    public boolean isLeaf(IntegerTreeNode node) {
+        if (node == null) {
+            return false;
+        }
+        if (node.right == null && node.left == null) {
+            return true;
+        }
+        return false; 
     }
 
     public static void main(String[] args) {
@@ -171,6 +187,7 @@ public class IntegerTreeNode {
 
         // Once initialised, add more nodes
         add(2);
+        add(13);
         add(13);
         add(1);
         add(5);
@@ -200,6 +217,7 @@ public class IntegerTreeNode {
 
         remove(17);
         remove(23);
+        remove(-1);
 
         System.out.println();
 
