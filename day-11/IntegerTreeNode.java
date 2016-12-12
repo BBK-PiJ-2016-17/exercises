@@ -111,39 +111,19 @@ public class IntegerTreeNode {
     @Override
     public String toString() {
 
-        String result = "[" + value;
+        String result = "" + value;
 
-        while (left != null) {
-            result += " L[" + left.value;
-            if (left.right != null) {
-                result += " R[" + left.right.value;
-            } else {
-                result += " R[]";
-            }
-            left = left.left;
-            if (left == null) {
-                result += " L[]";
-            }
+        if (left == null) {
+            result += " L[]";
+        } else {
+            result += " L[" + left.toString() + "]";
         }
-
-        // Not sure how to close the left traverse
-        result += "] [";
 
         if (right == null) {
             result += " R[]";
+        } else {
+            result += " R[" + right.toString() + "]";
         }
-
-        while (right != null) {
-            result += " R[" + right.value;
-            if (right.left != null) {
-                result += " R[" + right.left.value;
-            }
-            right = right.right;
-            result += "]";
-        }
-
-        // Maybe I need a counter to know how many to close?
-        result += "]";
 
         return result;
     }
@@ -194,6 +174,8 @@ public class IntegerTreeNode {
         add(13);
         add(1);
         add(5);
+        add(6);
+        add(4);
         add(17);
         add(-1);
         add(1000);
@@ -211,13 +193,17 @@ public class IntegerTreeNode {
 
         System.out.println();
 
+        System.out.println("Tree representation:");
+        System.out.println("[" + toString() + "]");
+
+        System.out.println();
+
         remove(17);
         remove(23);
 
         System.out.println();
 
-        System.out.println("Tree representation:");
-        System.out.println(toString());
+        System.out.println("[" + toString() + "]");
 
         System.out.println();
 
