@@ -33,6 +33,13 @@
  * convention, a tree with only one node (i.e. the root) has a depth of zero.
  * Hint: the depths of the trees in Figure 1 are 0, 1, 2, and 3.
  * Hint: the depth of a tree is one more than the deepest of its subtreees.
+ *
+ * 1.4 Deletion of elements (*)
+ *
+ * Add a method remove(int) to the class. This method must look for the node
+ * that contains the given value and remove it from the tree.
+ * Hint: removing leafs is trivial; to remove nodes, you can replace the removed
+ * node with its highest element on its left or the lowest on its right.
  */
 
 public class IntegerTreeNode {
@@ -47,7 +54,6 @@ public class IntegerTreeNode {
         this.right = null;
     }
 
-    // ... methods would be here
     public void add(int newNode) {
         if (newNode > this.value) {
             if (right == null) {
@@ -101,7 +107,7 @@ public class IntegerTreeNode {
 
     // 1.2 Adding method toString()
     // How do I move to the next if it's not null?
-    // A - I re-assign the node I just visited as it was the new root
+    // A - I re-assign the node I just visited as if it was the new root
     @Override
     public String toString() {
         System.out.print("[" + value);
@@ -138,6 +144,8 @@ public class IntegerTreeNode {
 
         System.out.println("]");
 
+        // This is a problem because it creates an empty tree
+        // Need to find a way to return the proper values
         String tree = null;
         return tree;
     }
@@ -160,6 +168,19 @@ public class IntegerTreeNode {
             return 1 + leftDepth;
         } else {
             return 1 + rightDepth;
+        }
+    }
+
+    // 1.4 Adding method remove()
+    public void remove(int value) {
+        if (contains(value)) {
+            System.out.println("The element is here");
+            // If it's a leaf
+            if (left == null && right == null) {
+
+            }
+        } else {
+            System.out.println("There's no such element in the tree.");
         }
     }
 
@@ -191,6 +212,8 @@ public class IntegerTreeNode {
         System.out.println("Does the tree contain no. 13? " + contains(13));
 
         System.out.println();
+
+        remove(17);
 
         toString();
 
