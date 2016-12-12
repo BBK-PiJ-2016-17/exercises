@@ -110,44 +110,42 @@ public class IntegerTreeNode {
     // A - I re-assign the node I just visited as if it was the new root
     @Override
     public String toString() {
-        System.out.print("[" + value);
+
+        String result = "[" + value;
 
         while (left != null) {
-            System.out.print(" L[" + left.value);
+            result += " L[" + left.value;
             if (left.right != null) {
-                System.out.print(" R[" + left.right.value);
-                // left.right = left.right;
+                result += " R[" + left.right.value;
             } else {
-                System.out.print(" R[]");
+                result += " R[]";
             }
             left = left.left;
             if (left == null) {
-                System.out.print(" L[]");
+                result += " L[]";
             }
         }
 
-        System.out.print("] [");
+        // Not sure how to close the left traverse
+        result += "] [";
 
         if (right == null) {
-            System.out.print("R[]");
+            result += " R[]";
         }
 
         while (right != null) {
-            System.out.print(" R[" + right.value);
+            result += " R[" + right.value;
             if (right.left != null) {
-                System.out.print(" R[" + right.left.value);
-                // right.left = right.left;
+                result += " R[" + right.left.value;
             }
             right = right.right;
-            System.out.print("]");
+            result += "]";
         }
 
-        System.out.println("]");
+        // Maybe I need a counter to know how many to close?
+        result += "]";
 
-        // This is a problem because it creates an empty tree
-        // Need to find a way to return the proper values
-        String tree = null;
-        return tree;
+        return result;
     }
 
     // 1.3 Adding method depth()
@@ -174,7 +172,7 @@ public class IntegerTreeNode {
     // 1.4 Adding method remove()
     public void remove(int value) {
         if (contains(value)) {
-            System.out.println("The element is here");
+            System.out.println("The element " + value + " is in the tree");
             // If it's a leaf
             if (left == null && right == null) {
 
@@ -214,8 +212,12 @@ public class IntegerTreeNode {
         System.out.println();
 
         remove(17);
+        remove(23);
 
-        toString();
+        System.out.println();
+
+        System.out.println("Tree representation:");
+        System.out.println(toString());
 
         System.out.println();
 
