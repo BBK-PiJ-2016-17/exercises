@@ -46,12 +46,18 @@ public class IntegerTreeNode {
     int value;
     IntegerTreeNode left;
     IntegerTreeNode right;
+
+    IntegerTreeNode current;
+    IntegerTreeNode parent;
     
     // Constructor
     public IntegerTreeNode(int value) {
         this.value = value;
         this.left = null;
         this.right = null;
+
+        this.current = current;
+        this.parent = parent;
     }
 
     public void add(int newNode) {
@@ -111,8 +117,6 @@ public class IntegerTreeNode {
     }
 
     // 1.2 Adding method toString()
-    // How do I move to the next if it's not null?
-    // A - I re-assign the node I just visited as if it was the new root
     @Override
     public String toString() {
 
@@ -159,22 +163,70 @@ public class IntegerTreeNode {
     public void remove(int nodeValue) {
         if (contains(nodeValue)) {
             System.out.println("The element " + nodeValue + " is in the tree");
+
+            // Why am I checking the nulls here, shouldn't they be in the
+            // isLeaf() method?
+            // IntegerTreeNode current = null;
+
+            // while (left != null && right != null) {
+            //     if (left.value == nodeValue) {
+            //         current = left;
+            //     } else {
+            //         left = left.left; // I need recursion
+            //     }
+
+            //     if (right.value == nodeValue) {
+            //         current = right;
+            //     } else {
+            //         right = right.right;
+            //     }
+
+            //     System.out.println("left.value = " + left.value);
+            //     System.out.println("right.value = " + right.value);
+            // }
             // check if it's a leaf
-            if (isLeaf(left.left.left)) {
-                System.out.println("hey!");
-            }
+
+
+        // if (left.value == nodeValue) {
+        //     current = left;
+        // } else if (right.value == nodeValue) {
+        //     current = right;
+        // }
+
+
+            // if (isLeaf(current, nodeValue)) {
+            //     System.out.println("hey! it should be a leaf");
+            // } else {
+            //     System.out.println("maybe not a leaf");
+            // }
         } else {
             System.out.println("The element " + nodeValue + " is NOT in the tree.");
         }
     }
 
-    public boolean isLeaf(IntegerTreeNode node) {
-        if (node == null) {
-            return false;
-        }
-        if (node.right == null && node.left == null) {
+    public boolean isLeaf(IntegerTreeNode node, int value) {
+        // System.out.println(node.value);
+
+        if (node.value == value) {
+            current = node;
+            return true;
+        } else if (node.left != null) {
+            isLeaf(node.left, value);
+            return true;
+        } else if (node.right != null) {
+            isLeaf(node.right, value);
             return true;
         }
+
+        if (node == null) {
+            System.out.println("It's null");
+            return false;
+        }
+        if (node.right == null && node.left == null && node.value == value) {
+            System.out.println("test");
+            return true;
+        }
+
         return false; 
     }
 
@@ -215,9 +267,21 @@ public class IntegerTreeNode {
 
         System.out.println();
 
+        System.out.println("Depth of the tree: " + depth());
+
+        System.out.println();
+
         remove(17);
         remove(23);
         remove(-1);
+
+        System.out.println(isLeaf(left, 17));
+
+        System.out.println("\nIs it a leaf?");
+        System.out.println(isLeaf(parent, -1));
+        System.out.println(isLeaf(left, -1));
+        System.out.println(isLeaf(right, 24));
+        System.out.println(isLeaf(parent, 24));
 
         System.out.println();
 
