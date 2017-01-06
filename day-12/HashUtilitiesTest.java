@@ -1,5 +1,14 @@
 /**
  * Test HashUtilities
+ *
+ * Day 12 - Ex 2 / Testing mathematical functions
+ *
+ * On Day 7 you implemented a simple hash. Write a battery of tests to verify
+ * its behaviour, paying special attention to border cases.
+ *
+ * Hint: Implement a loop that tries a fair amount of random numbers (around two
+ * thousand, for the purposes of this exercise) and verify that the output is
+ * within the range.
 */
 
 import static org.junit.Assert.assertEquals;
@@ -67,5 +76,7 @@ public class HashUtilitiesTest {
         int expected = 1;
         assertEquals(output, expected);
     }
+
+    // How do I implement a loop for testing?
 
 }
