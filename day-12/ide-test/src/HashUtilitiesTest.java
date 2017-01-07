@@ -58,14 +58,14 @@ public class HashUtilitiesTest {
 
     // 5
     // Try to fail - It fails, good!
-//     @Test
-//     public void tests1000again() {
-//         HashUtilities hash = new HashUtilities();
-//         int input = 1000;
-//         int output = hash.shortHash(input);
-//         int expected = 1; // should be 0
-//         assertEquals(output, expected);
-//     }
+    // @Test
+    // public void tests1000again() {
+    //   HashUtilities hash = new HashUtilities();
+    //   int input = 1000;
+    //   int output = hash.shortHash(input);
+    //   int expected = 1; // should be 0
+    //   assertEquals(output, expected);
+    // }
 
     // 6
     @Test
