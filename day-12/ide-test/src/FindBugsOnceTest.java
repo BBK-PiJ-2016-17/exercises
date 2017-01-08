@@ -18,9 +18,9 @@ public class FindBugsOnceTest {
 
     @Test
     public void testsNormalName() {
-        Person p = new Person();
+        FindBugsOnce test = new FindBugsOnce();
         String input = "Dereck Robert Yssirt";
-        String output = p.getInitials(input);
+        String output = test.getInitials(input);
         String expected = "DRY";
         assertEquals(output, expected);
     }
