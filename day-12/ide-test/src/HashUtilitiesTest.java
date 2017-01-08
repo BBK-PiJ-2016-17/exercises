@@ -9,6 +9,8 @@
  * Hint: Implement a loop that tries a fair amount of random numbers (around two
  * thousand, for the purposes of this exercise) and verify that the output is
  * within the range.
+ *
+ * @author Ginestra Ferraro
 */
 
 import static org.junit.Assert.assertEquals;

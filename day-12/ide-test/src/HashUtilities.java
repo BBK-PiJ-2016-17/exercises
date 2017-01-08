@@ -12,6 +12,8 @@
  * Every object in Java has the method hashCode(), that returns an int. Test
  * your hash function by passing the hash codes of different objects and
  * verifying that it always returns a number between 0 and 1000.
+ *
+ * @author Ginestra Ferraro
 */
 
 public class HashUtilities {
