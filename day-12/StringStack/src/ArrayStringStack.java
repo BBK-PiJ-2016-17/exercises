@@ -45,17 +45,17 @@ public class ArrayStringStack implements StringStack {
     public String peek() {
 	  if (isEmpty()) {
 		return null;
-	  } else {
-		return stringArray[size - 1];
 	  }
+
+	  return stringArray[size - 1];
     }
 
     public boolean isEmpty() {
 	  if (size == 0) {
 		return true;
-	  } else {
-		return false;
 	  }
+
+	  return false;
     }
 
     /**
@@ -65,9 +65,9 @@ public class ArrayStringStack implements StringStack {
     private boolean isAlmostFull() {
 	  if (stringArray.length - size < 1) {
 		return true;
-	  } else {
-		return false;
 	  }
+
+	  return false;
     }
 
     /**

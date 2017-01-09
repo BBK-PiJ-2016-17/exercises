@@ -22,7 +22,7 @@ public class FindBugsOnceTest {
         String input = "Dereck Robert Yssirt";
         String output = test.getInitials(input);
         String expected = "DRY";
-        assertEquals(output, expected);
+        assertEquals(expected, output);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class FindBugsOnceTest {
         String input = "Dereck  Robert Yssirt";
         String output = test.getInitials(input);
         String expected = "DRY";
-        assertEquals(output, expected);
+        assertEquals(expected, output);
     }
 
 }
