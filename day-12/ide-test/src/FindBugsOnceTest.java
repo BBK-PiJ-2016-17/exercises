@@ -24,4 +24,14 @@ public class FindBugsOnceTest {
         String expected = "DRY";
         assertEquals(output, expected);
     }
+
+    @Test
+    public void failTestNormalName() {
+        FindBugsOnce test = new FindBugsOnce();
+        String input = "Dereck  Robert Yssirt";
+        String output = test.getInitials(input);
+        String expected = "DRY";
+        assertEquals(output, expected);
+    }
+
 }
