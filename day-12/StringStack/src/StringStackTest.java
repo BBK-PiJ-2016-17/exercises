@@ -22,9 +22,9 @@ public class StringStackTest {
         // Execute before each test
         System.out.println("@Before setUp()");
         ArrayStringStack stringStackTest = new ArrayStringStack();
+        String input = "First element in";
     }
 
-    @Ignore
     @Test
     public void pushTest() {
 

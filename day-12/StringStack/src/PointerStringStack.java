@@ -32,17 +32,17 @@ public class PointerStringStack implements StringStack {
     public String peek() {
 	  if (head == null) {
 		return null;
-	  } else {
-		return head.getText();
 	  }
+
+	  return head.getText();
     }
 
     public boolean isEmpty() {
 	  if (getSize() == 0) {
 		return true;
-	  } else {
-		return false;
 	  }
+
+	  return false;
     }
 
     /**
