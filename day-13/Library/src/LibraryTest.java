@@ -25,35 +25,46 @@ public class LibraryTest {
         secondBook = new BookImpl("Fred Vargas", "The Three Evangelists");
         thirdBook = new BookImpl("Sadie Smith", "White Teeth");
 
-        userOne = new UserImpl("This guy");
+        userOne = new UserImpl("This Guy");
     }
 
     @Test
     public void authorTest() {
-
         String output = "Mark Twain";
         String input = firstBook.getAuthor();
 
         assertEquals(output, input);
-
     }
 
     @Test
     public void titleTest() {
-
         String output = "White Teeth";
         String input = thirdBook.getTitle();
 
         assertEquals(output, input);
-
     }
 
     @Test
-    public void userTest() {
-
-        String nameOut = "John Smith";
+    public void userNameTest() {
+        String nameOut = "This Guy";
         String nameIn = userOne.getName();
 
+        assertEquals(nameOut, nameIn);
+    }
+
+    @Test
+    public void userGetIDTest() {
+        int id = 0;
+
+        assertEquals(id, userOne.getLibraryID());
+    }
+
+    @Test
+    public void userSetIDTest() {
+        int id = 17;
+
+        userOne.setLibraryID(17);
+        assertEquals(id, userOne.getLibraryID());
     }
 
     @After
