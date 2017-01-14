@@ -16,9 +16,11 @@ import org.junit.Test;
 
 public class LibraryTest {
 
+    private BookImpl firstBook; // Important: define the object here, to make it visible to @Test
+
     @Before
     public void setUp() {
-        BookImpl firstBook = new BookImpl("Mark Twain", "The Million Pound Bank Note");
+        firstBook = new BookImpl("Mark Twain", "The Million Pound Bank Note");
     }
 
     @Test
