@@ -18,6 +18,10 @@ public class LibraryTest {
 
     @Before
     public void MockBook {
+        BookImpl aBook = new BookImpl();
+        String author = aBook.getAuthor("Mark Twain");
+        String title = aBook.getTitle("The Million Pound Bank Note");
 
+        System.out.println("Author: " + author + "/nTitle: " + title);
     }
 }

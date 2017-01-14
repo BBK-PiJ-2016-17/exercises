@@ -5,6 +5,6 @@
  */
 
 public interface Book {
-    String author;
-    String title;
+    public String author = "";
+    public String title = "";
 }
