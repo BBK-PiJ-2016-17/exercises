@@ -17,11 +17,15 @@ import org.junit.Test;
 public class LibraryTest {
 
     @Before
-    public void MockBook {
-        BookImpl aBook = new BookImpl();
-        String author = aBook.getAuthor("Mark Twain");
-        String title = aBook.getTitle("The Million Pound Bank Note");
+    public void MockBook() {
+        BookImpl firstBook = new BookImpl("Mark Twain", "The Million Pound Bank Note");
 
-        System.out.println("Author: " + author + "/nTitle: " + title);
+        System.out.println("Author: " + firstBook.getAuthor() + "/nTitle: " + firstBook.getTitle());
+    }
+
+    @Ignore
+    @Test
+    public void testTitle() {
+
     }
 }

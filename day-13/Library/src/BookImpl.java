@@ -9,17 +9,22 @@ public class BookImpl {
 
     private String author;
     private String title;
+    private Book thisBook;
 
-    public BookImpl() {
+    public BookImpl(String author, String title) {
         this.author = author;
         this.title = title;
     }
 
-    public String getTitle(String title) {
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public String getAuthor(String author) {
-        return author;
+    public void setBook(Book newBook) {
+        thisBook = newBook;
     }
 }
