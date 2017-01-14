@@ -5,10 +5,10 @@
  * @author Ginestra Ferraro
  */
 
-public class BookImpl {
+public class BookImpl implements Book {
 
-    private String author;
-    private String title;
+    private final String author;
+    private final String title;
     private Book thisBook;
 
     public BookImpl(String author, String title) {
@@ -16,10 +16,12 @@ public class BookImpl {
         this.title = title;
     }
 
+    @Override
     public String getAuthor() {
         return author;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }

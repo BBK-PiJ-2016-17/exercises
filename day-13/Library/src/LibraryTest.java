@@ -16,7 +16,7 @@ import org.junit.Test;
 
 public class LibraryTest {
 
-    private BookImpl firstBook, secondBook, thirdBook; // Important: define the object here, to make it visible to @Test
+    private Book firstBook, secondBook, thirdBook; // Important: define the object here, to make it visible to @Test
 
     @Before
     public void setUp() {
@@ -42,5 +42,6 @@ public class LibraryTest {
         String input = thirdBook.getTitle();
 
         assertEquals(output, input);
+
     }
 }
