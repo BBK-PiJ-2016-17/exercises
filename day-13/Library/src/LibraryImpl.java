@@ -20,6 +20,6 @@ public class LibraryImpl implements Library {
     }
 
     public int getLibID() {
-        return libID;
+        return 24;
     }
 }

@@ -73,13 +73,17 @@ public class LibraryTest {
 
     @Test
     public void registerTest() {
-        int id = 0;
-        assertEquals(id, userOne.register(libOne));
+        assertEquals(24, userOne.register(libOne));
     }
 
     @Test
     public void libraryNameTest() {
         assertEquals("British Library", libOne.getLibName());
+    }
+
+    @Test
+    public void libraryIDTest() {
+        assertEquals(24, libOne.getLibID());
     }
 
     @After
