@@ -10,9 +10,11 @@ public class LibraryImpl implements Library {
 
     private String libName;
     private int libID;
+    private int numBooksBorrowed;
 
     public LibraryImpl(String libName) {
         this.libName = libName;
+        this.libID = libID;
     }
 
     public String getLibName() {
@@ -21,5 +23,9 @@ public class LibraryImpl implements Library {
 
     public int getLibID() {
         return 24;
+    }
+
+    public int getMaxBooksPerUser() {
+        return numBooksBorrowed;
     }
 }

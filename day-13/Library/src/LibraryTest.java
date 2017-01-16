@@ -88,7 +88,7 @@ public class LibraryTest {
 
     @Test
     public void maxNumBooksPerUserTest() {
-        assertTrue(booksBorrowed <= 3);
+        assertTrue(numBooksBorrowed <= 3);
     }
 
     @After

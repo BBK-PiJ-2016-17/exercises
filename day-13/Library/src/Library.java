@@ -4,4 +4,6 @@
 public interface Library {
     String getLibName();
     int getLibID();
+
+    int getMaxBooksPerUser();
 }

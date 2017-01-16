@@ -9,7 +9,7 @@ public class BookImpl implements Book {
 
     private final String author;
     private final String title;
-    private Book thisBook;
+    // private Book thisBook;
 
     public BookImpl(String author, String title) {
         this.author = author;
@@ -26,7 +26,7 @@ public class BookImpl implements Book {
         return title;
     }
 
-    public void setBook(Book newBook) {
-        thisBook = newBook;
-    }
+    // public void setBook(Book newBook) {
+    //    thisBook = newBook;
+    // }
 }
