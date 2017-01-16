@@ -29,7 +29,7 @@ public class LibraryTest {
         userOne = new UserImpl("This Guy");
         userTwo = new UserImpl("That Guy");
 
-        libOne = new LibraryImpl();
+        libOne = new LibraryImpl("British Library"); // libName now set at construction time
     }
 
     @Test
@@ -73,7 +73,7 @@ public class LibraryTest {
 
     @Test
     public void registerTest() {
-        int id = 24;
+        int id = 0;
         assertEquals(id, userOne.register(libOne));
     }
 

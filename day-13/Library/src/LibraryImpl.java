@@ -8,11 +8,18 @@
 
 public class LibraryImpl implements Library {
 
+    private String libName;
+    private int libID;
+
+    public LibraryImpl(String libName) {
+        this.libName = libName;
+    }
+
     public String getLibName() {
-        return "British Library";
+        return libName;
     }
 
     public int getLibID() {
-        return 24;
+        return libID;
     }
 }
