@@ -28,6 +28,7 @@ public class LibraryTest {
         thirdBook = new BookImpl("Sadie Smith", "White Teeth");
 
         userOne = new UserImpl("This Guy");
+        userTwo = new UserImpl("That Guy");
 
         libOne = new LibraryImpl();
     }
@@ -63,7 +64,6 @@ public class LibraryTest {
         assertEquals(id, userOne.getLibraryID());
     }
 
-    @Ignore
     @Test
     public void userSetIDTest() {
         int id = 17;
