@@ -14,15 +14,23 @@ public class LibraryImpl implements Library {
 
     public LibraryImpl(String libName) {
         this.libName = libName;
-        this.libID = libID;
+        this.libID = libID; // needed?
     }
 
     public String getLibName() {
         return libName;
     }
 
-    public int getLibID() {
-        return 24;
+    public String getUserID(String userID) {
+
+        // Check for the user name and return it's ID
+
+
+        if (userID.isEmpty()) {
+            // Create a unique ID and then return it
+            return userID;
+        }
+        return userID;
     }
 
     public int getMaxBooksPerUser() {

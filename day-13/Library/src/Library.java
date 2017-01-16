@@ -3,7 +3,7 @@
  */
 public interface Library {
     String getLibName();
-    int getLibID();
+    String getUserID(String userID);
 
     int getMaxBooksPerUser();
 }
