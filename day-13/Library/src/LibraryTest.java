@@ -7,7 +7,7 @@
 
 import static org.junit.Assert.assertEquals;
 // import static org.junit.Assert.assertFalse;
-// import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -84,6 +84,11 @@ public class LibraryTest {
     @Test
     public void libraryIDTest() {
         assertEquals(24, libOne.getLibID());
+    }
+
+    @Test
+    public void maxNumBooksPerUserTest() {
+        assertTrue(booksBorrowed <= 3);
     }
 
     @After
