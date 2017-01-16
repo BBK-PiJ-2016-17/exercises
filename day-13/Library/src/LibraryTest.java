@@ -11,7 +11,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
-// import org.junit.Ignore;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -68,8 +67,19 @@ public class LibraryTest {
     public void userSetIDTest() {
         int id = 17;
 
-        userTwo.setLibraryID(17); // TO FIX : NullPointerException
+        userTwo.setLibraryID(17);
         assertEquals(id, userTwo.getLibraryID());
+    }
+
+    @Test
+    public void registerTest() {
+        int id = 24;
+        assertEquals(id, userOne.register(libOne));
+    }
+
+    @Test
+    public void libraryNameTest() {
+        assertEquals("British Library", libOne.getLibName());
     }
 
     @After

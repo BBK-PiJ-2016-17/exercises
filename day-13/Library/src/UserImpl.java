@@ -31,7 +31,7 @@ public class UserImpl implements User {
     @Override
     public int register(Library library) {
         this.library = library;
-        this.libraryID = library.getLibID();
+        this.libraryID = library.getLibID(); // This is the Library ID, not the User's
         return this.libraryID;
     }
 
