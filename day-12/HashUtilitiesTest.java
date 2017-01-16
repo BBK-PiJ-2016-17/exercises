@@ -11,7 +11,10 @@
  * within the range.
 */
 
+import static java.lang.Math.random;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class HashUtilitiesTest {
@@ -78,5 +81,16 @@ public class HashUtilitiesTest {
     }
 
     // How do I implement a loop for testing?
+    // A: With a for loop
+    @Test
+    public void testsInRange() {
+        HashUtilities hash = new HashUtilities();
 
+        for (int i = 0; i < 20000; i++) {
+            int input = (int) (random() * 1000000000);
+            int output = hash.shortHash(input);
+            boolean expected = (output >= 0 && output <= 999);
+            assertTrue("out of range", expected);
+        }
+    }
 }
