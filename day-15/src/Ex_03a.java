@@ -9,33 +9,33 @@
  */
 
 public class Ex_03a {
+    private int total;
 
+    public Ex_03a() {
+        this.total = total;
+    }
 
     public static void main(String[] args) {
         Ex_03a test = new Ex_03a();
         test.launch();
     }
 
-    public void launch() {
-
+    public int getNumbers() {
         try {
-
-            for (int i = 0; i < 10; i++) {
-                System.out.print("Give me a number: ");
-
-                String str = System.console().readLine();
-                int input = Integer.parseInt(str);
-            }
-
-
-        } catch (NumberFormatException ex) {
-
-            System.out.println("This is not a number.");
-            // Reduce counter
-            // go back to asking number
-            // Although it's a catch... so it's going to exit the program
-
+            System.out.print("Give me a number: ");
+            String str = System.console().readLine();
+            int latestNum = Integer.parseInt(str);
+        } catch (NumberFormatException) {
+            System.out.println("This is not a number");
         }
+    }
 
+    public void launch() {
+        total = 0;
+
+        for (int i = 0; i < 10; i++) {
+            int latestNum = getNumbers();
+            total =+ total + latestNum;
+        }
     }
 }
