@@ -27,12 +27,12 @@ public class CreateDirectory {
 
         String newName = System.console().readLine();
 
-        System.out.println("A new folder " + newName + " has been created.");
-
         File newFolder = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
                 "/exercises/day-16/src/" + newName);
 
         newFolder.mkdir();
+
+        System.out.println("A new folder " + newName + " has been created.");
     }
 
 }
