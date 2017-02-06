@@ -33,7 +33,7 @@ public class CreateDirectory {
         newFolder.mkdir();
 
         System.out.println("A new folder \"" + newName + "\" has been created" +
-                "!");
+                ".");
     }
 
 }
