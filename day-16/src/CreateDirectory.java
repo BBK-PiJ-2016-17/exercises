@@ -13,15 +13,16 @@
  */
 
 import java.io.File;
+import java.io.IOException;
 
 public class CreateDirectory {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         CreateDirectory newDir = new CreateDirectory();
         newDir.launch();
     }
 
-    public void launch() {
+    public void launch() throws IOException {
 
         System.out.print("What name shall the new directory be called? ");
 
