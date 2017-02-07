@@ -9,15 +9,16 @@
  */
 
 import java.io.File;
+import java.io.IOException;
 
 public class LsFiles {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         LsFiles listThemAll = new LsFiles();
         listThemAll.launch();
     }
 
-    public void launch() {
+    public void launch() throws IOException {
 
         File here = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
                 "/exercises/day-16/src");
