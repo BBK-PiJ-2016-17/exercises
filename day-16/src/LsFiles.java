@@ -9,24 +9,47 @@
  */
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class LsFiles {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         LsFiles listThemAll = new LsFiles();
         listThemAll.launch();
     }
 
-    public void launch() throws IOException {
+    // Option 1
+
+    public void launch() {
 
         File here = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
                 "/exercises/day-16/src");
+
         String[] files = here.list();
 
-        for (String file : files) {
-            System.out.println(file);
+        try {
+
+            for (String file : files) {
+                System.out.println(file);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
 
     }
+
+    // Option 2
+
+//    public void launch() throws IOException {
+//
+//        File here = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
+//                "/exercises/day-16/src");
+//        String[] files = here.list();
+//
+//        for (String file : files) {
+//            System.out.println(file);
+//        }
+//
+//    }
 }
