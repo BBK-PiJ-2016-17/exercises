@@ -23,46 +23,51 @@ public class ShowContent {
     public static void main(String[] args) {
         ShowContent openIfExists = new ShowContent();
 
-        try {
-            openIfExists.launch();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-            System.out.println("There is no file with that name.");
-        } finally {
-            System.out.println("\n--- That's all folks ---\n");
-        }
+        openIfExists.launch();
     }
 
-    public void launch() throws FileNotFoundException {
+    public void launch() {
 
-        System.out.print("What file do you want me to open? ");
-        String thisFile = System.console().readLine();
+        try {
 
-        // Loop through the files in this folder and check if any matches the
-        // name (need to remove extension?)
+            System.out.print("What file do you want me to open? ");
+            String thisFile = System.console().readLine();
 
-        File here = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
-                "/exercises/day-16/src");
+            // Loop through the files in this folder and check if any matches the
+            // name (need to remove extension?)
 
-        String[] files = here.list();
+            File here = new File("/Users/ginestra/Dropbox/MSc/MSc-PiJ-16-17" +
+                    "/exercises/day-16/src");
 
-        for (String file : files) {
+            String[] files = here.list();
 
-            if (file.equals(thisFile)) {
-                // Print the content of the file
-                File userFile = new File(thisFile);
-                try (BufferedReader in = new BufferedReader(new FileReader(userFile))) {
+            for (String file : files) {
 
-                    String line;
-                    while ((line = in.readLine()) != null) {
-                        System.out.println(line);
+                if (file.equals(thisFile)) {
+                    // Print the content of the file
+                    File userFile = new File(thisFile);
+                    try (BufferedReader in = new BufferedReader(new FileReader(userFile))) {
+
+                        String line;
+                        while ((line = in.readLine()) != null) {
+                            System.out.println(line);
+                        }
+                    } catch (FileNotFoundException ex) {
+                        System.out.println("File " + userFile + " does not exist.");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
-                } catch (FileNotFoundException ex) {
-                    System.out.println("File " + userFile + " does not exist.");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
                 }
             }
+
+            //Throw the exception!
+            throw new FileNotFoundException(thisFile);
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("There is no file with that name.");
+            ex.printStackTrace();
+        } finally {
+            System.out.println("\n--- That's all folks ---\n");
         }
 
     }
