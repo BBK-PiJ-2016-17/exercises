@@ -5,7 +5,7 @@
  * a) Write a program that takes a name from the user at the command line. If
  * a file with that name exists, the program must show its contents on screen
  * . If it does not, the program must say so.
- * 
+ *
  * b) (*)
  * Modify the program so that it takes many file names at the command line, and
  * then shows them all one after the other.
@@ -29,7 +29,7 @@ public class ShowContent {
             ex.printStackTrace();
             System.out.println("There is no file with that name.");
         } finally {
-            System.out.println("--- That's all folks ---");
+            System.out.println("\n--- That's all folks ---\n");
         }
     }
 
@@ -48,13 +48,9 @@ public class ShowContent {
 
         for (String file : files) {
 
-            System.out.println(file);
-
-            if (file == thisFile) {
-
-                System.out.println("Am I ever entering this loop?"); // NO!
-                // Show the content of the file
-                File userFile = new File("file.csv");
+            if (file.equals(thisFile)) {
+                // Print the content of the file
+                File userFile = new File(thisFile);
                 try (BufferedReader in = new BufferedReader(new FileReader(userFile))) {
 
                     String line;
