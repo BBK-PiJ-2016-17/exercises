@@ -60,14 +60,15 @@ public class ShowContent {
                 }
             }
 
-            //Throw the exception!
+            // Throw the exception!
             throw new FileNotFoundException(thisFile);
 
         } catch (FileNotFoundException ex) {
             System.out.println("There is no file with that name.");
             ex.printStackTrace();
         } finally {
-            System.out.println("\n--- That's all folks ---\n");
+            System.out.println("\n--- That's all folks (finally! Pun " +
+                    "intended) ---\n");
         }
 
     }
