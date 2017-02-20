@@ -23,14 +23,13 @@ public class ShowContent {
     public static void main(String[] args) {
         ShowContent openIfExists = new ShowContent();
 
-        String thisFile = null;
-
         try {
             openIfExists.launch();
 
-            throw new FileNotFoundException(thisFile);
+            // throw new FileNotFoundException(thisFile); // How do I catch it
+            // here?
         } catch (FileNotFoundException ex) {
-            System.out.println("File " + thisFile + " does not exists.");
+            System.out.println("File does not exists.");
             ex.printStackTrace();
         } finally {
             System.out.println("\n--- That's all folks ---\n");
