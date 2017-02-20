@@ -1,5 +1,9 @@
 /**
- * Created by ginestra on 20/02/2017.
+ * Day 18 - Ex 1 / Text Loops
+ *
+ * Look at the following code (comments ommitted for brevity). What will the
+ * output be for each of the “thread” and the “no threads” modes?
+ *
  */
 
 public class TextLoopTwo implements Runnable {
@@ -16,7 +20,7 @@ public class TextLoopTwo implements Runnable {
     public void run() {
         for (int i = 0; i < COUNT; i++) {
             // System.out.println("Loop:" + name + ", iteration:" + i + ".");
-            sleep();
+           sleep();
         }
     }
 

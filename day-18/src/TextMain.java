@@ -1,5 +1,15 @@
 /**
- * Created by ginestra on 20/02/2017.
+ * Day 18 - Ex 1 / Text Loops
+ *
+ * Look at the following code (comments ommitted for brevity). What will the
+ * output be for each of the “thread” and the “no threads” modes?
+ *
+ * Compile and execute this code several times. Do you get the result you
+ * expected? Run it several times. Do you always get the same result in
+ * ’mode 0’? And in mode 1?
+ *
+ * To run with arguments type: java TextMain 0 (or 1)
+ *
  */
 
 public class TextMain {
