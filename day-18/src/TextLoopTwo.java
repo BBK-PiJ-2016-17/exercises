@@ -24,9 +24,22 @@ public class TextLoopTwo implements Runnable {
         }
     }
 
+//    private void sleep() {
+//        try {
+//            Thread.sleep(1000); // Sleep one second
+//        } catch (InterruptedException ex) {
+//            ex.printStackTrace(); // Nothing to do, sleep a bit less
+//        }
+//    }
+
     private void sleep() {
         try {
-            Thread.sleep(1000); // Sleep one second
+            System.out.print("Sleeping for a second");
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(200);
+                System.out.print(".");
+            }
+            System.out.println("done!");
         } catch (InterruptedException ex) {
             ex.printStackTrace(); // Nothing to do, sleep a bit less
         }
