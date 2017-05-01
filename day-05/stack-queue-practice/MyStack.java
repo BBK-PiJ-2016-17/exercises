@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+// Experimenting with LIFO stack and Arrays
+
 public class MyStack {
     private int size;
     private String myArray[];
