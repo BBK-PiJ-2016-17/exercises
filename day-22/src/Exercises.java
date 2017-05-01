@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -51,12 +52,7 @@ public class Exercises {
 
     @Test
     public void printAllWords() {
-        /* TODO */
-
-        // We will give you this one to show you the "style"
         wordList.forEach(System.out::println);
-
-        // no assertions
     }
 
     // Exercise 2: Convert all words in wordList to upper case,
@@ -65,7 +61,11 @@ public class Exercises {
     @Test
     @Ignore
     public void upperCaseWords() {
-        List<String> output = null; /* TODO */
+
+        wordList.forEach(String::toUpperCase); // cannot modify anyway
+
+        List<String> output = wordList -> wordList.forEach(String::toUpperCase);
+        /* TODO */
 
         assertEquals(
                 Arrays.asList(
