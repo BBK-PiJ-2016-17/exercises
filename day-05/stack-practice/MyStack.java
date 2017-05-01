@@ -138,11 +138,8 @@ public class MyStack {
         System.out.print("\t");
         thisStack.peek();
 
-
         System.out.println();
         System.out.println("At index 0: " + thisStack.myArray[0]);
         System.out.println("At index 9: " + thisStack.myArray[9]);
-
-
     }
 }
