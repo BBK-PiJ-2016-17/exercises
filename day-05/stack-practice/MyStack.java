@@ -3,7 +3,8 @@ import java.util.Arrays;
 public class MyStack {
     private int size;
     private String myArray[];
-    private int top = -1;
+    private int top = -1;   // The stack is initially empty, therefore nothing
+                            // is stored in index 0. I set to -1 to start off.
 
     public MyStack(int size) {
         this.size = size;
