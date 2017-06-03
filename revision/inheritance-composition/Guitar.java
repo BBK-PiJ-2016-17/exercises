@@ -7,5 +7,11 @@ public class Guitar {
     private MusicalInstrument mi = new MusicalInstrument();
     private WoodenObject wo = new WoodenObject();
 
+    public void play(String piece) {
+        System.out.println(piece);
+    }
 
+    public void burn() {
+        System.out.println("I'm burning.");
+    }
 }
