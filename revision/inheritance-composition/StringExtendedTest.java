@@ -8,5 +8,6 @@ public class StringExtendedTest {
         StringExtended myString = new StringExtended();
 
         myString.printEven("BackBeethovenAndMozart");
+        myString.printEven("This must be the place");
     }
 }
