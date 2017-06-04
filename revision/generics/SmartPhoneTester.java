@@ -14,7 +14,7 @@ public class SmartPhoneTester {
         myPhone.call("0039012233");
         myPhone.ringAlarm("Ring ring");
 
-        System.out.println("\n=== Upcasting ===\n");
+        System.out.println("\n=== Direct Upcasting ===\n");
 
         MobilePhone myMobSmartPhone = new SmartPhone("The latest HTC");
 
@@ -23,6 +23,28 @@ public class SmartPhoneTester {
         ((SmartPhone) myMobSmartPhone).findPosition();
         ((SmartPhone) myMobSmartPhone).call("0039012233");
         myMobSmartPhone.ringAlarm("Mob phone ring ring");
+        myMobSmartPhone.playGame("Scrabble");
 
+        System.out.println("\n=== Indirect Upcasting ===\n");
+
+        testPhone(myMobSmartPhone);
+
+        System.out.println("\n=== Downcasting ===\n");
+
+        testPhoneDowncast(myMobSmartPhone);
+
+    }
+
+    public void testPhone(Phone phone) {
+        phone.call("1-4-5-6999");
+        // phone.ringAlarm("Ringing an alarm");
+        // phone.playGame("Scrabble");
+    }
+
+    public void testPhoneDowncast(Phone phone) {
+        SmartPhone sp = (SmartPhone) phone;
+        sp.call("1-4-5-6999");
+        sp.ringAlarm("Ringing an alarm");
+        sp.playGame("Scrabble");
     }
 }
