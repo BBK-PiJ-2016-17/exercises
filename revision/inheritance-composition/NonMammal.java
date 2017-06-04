@@ -1,13 +1,10 @@
-public class NonMammal implements Animal {
-    public void call() {
-
+public class NonMammal {
+    private String name;
+    public NonMammal(String name) {
+        this.name = name;
     }
 
-    public void reproduce() {
-
-    }
-
-    public void makeSound() {
-
+    public void layEggs() {
+        System.out.println(name + ": Laying eggs...");
     }
 }
