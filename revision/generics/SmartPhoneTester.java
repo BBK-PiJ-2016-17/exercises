@@ -33,6 +33,15 @@ public class SmartPhoneTester {
 
         testPhoneDowncast(myMobSmartPhone);
 
+        System.out.println("\n=== Casting Exception ===\n");
+
+        MobilePhone exPhone = new MobilePhone("Alcatel");
+
+        testPhone(exPhone);
+        // testPhoneDownCast(exPhone);
+
+        testPhone(new MobilePhone("BlackBerry"));
+
     }
 
     public void testPhone(Phone phone) {
