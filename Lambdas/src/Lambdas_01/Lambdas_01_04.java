@@ -15,9 +15,12 @@ public class Lambdas_01_04 {
         Calculate add = (a, b) -> a + b;
         Calculate difference = (a, b) -> Math.abs(a - b);
         Calculate divide = (a, b) -> (b != 0 ? a/b : 0);
+        Calculate multiply = (a, b) -> a * b;
 
         System.out.println(add.calc(3, 2));
         System.out.println(difference.calc(5, 10));
         System.out.println(divide.calc(12, 3));
+        System.out.println(divide.calc(12, 0));
+        System.out.println(multiply.calc(3, 5));
     }
 }
