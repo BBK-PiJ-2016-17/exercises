@@ -11,7 +11,10 @@ public class GenericMethodExample {
         print(ints);
         print(daysOfWeek);
 
-        System.out.println(countGreaterThan(daysOfWeek,"S"));
+
+        System.out.println("How many are grater than 50: " + countGreaterThan(ints, 50));
+        System.out.println("Days: " + countGreaterThan(daysOfWeek,
+                "S"));
     }
 
     public static <T extends Comparable<T>> int countGreaterThan(T[] list, T

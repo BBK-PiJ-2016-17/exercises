@@ -1,5 +1,5 @@
 package generics;
 
-public interface GenericInterface {
-    
+public interface GenericInterface<T> {
+    void add(T t);
 }

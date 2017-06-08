@@ -3,7 +3,9 @@ package generics;
 public class GenericInterfaceExample {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        GenericList<String> list = new GenericList<>();
+
+        list.add("Hello World!");
     }
     
 }
